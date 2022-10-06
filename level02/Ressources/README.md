@@ -22,16 +22,17 @@ Password:f2av5il02puano7naaf6adaaf
 On trouve un fichier *`.pcap`* qui est un fichier de données associé à Wireshark. On télécharge donc le fichier pour l'ouvrir avec Wireshark
 
 ```
-:~$ scp -P 4242 level02@127.0.0.1:/home/user/level02/level02.pcap .
+:~$ scp -P 4242 level02@192.168.56.101:/home/user/level02/level02.pcap .
+Password:f2av5il02puano7naaf6adaaf
+level02.pcap
+
+:~$ chmod 644 level02.pcap
 ```
-En ouvrant le fichier à ligne 43, on trouve `password`, ce qui suit sera donc le mot de passe.
+En ouvrant le fichier à ligne 43, on trouve `Pas sword:`, ce qui suit sera donc le mot de passe, on va alors l'analyser.\
+> Analyse > Follow > TCP Stream
 
-Wireshark represente les caracteres non imprimables par des `.` :  
-> 7f (hexa) -> 127 (decimal) = `del` en ascii -> signifie une suppression de caractere  
-> 0d (hexa) -> 13 (decimal) = `cr` en ascii -> signifie un appuie sur la touche `entrée`
-
-on obtient donc le mot de passe suivant : 
-`ft_waNDReL0L`
+On obtiens alors le résultat : `Password: ft_wandr...NDRel.L0L` ce qui nous donne donc le mot de passe suivant : 
+`ft_waNDReL0L`.\
 
 On se connecte ensuite à flag02, puis on lance `getflag`
 
