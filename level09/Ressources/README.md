@@ -49,19 +49,17 @@ a
 ab
 :~$ ./level09 aaaaa
 abcde
-:~$ ./level09 12345
-13579
 :~$ ./level09 11111
 12345
 ```
 
-Dés lors, on remarque facilement le schema réalisé par le hashage. On se compte facilement que le binaire prend chaque caractère de la string, et lui ajoute son index.\
+Dés lors, on remarque facilement le schema réalisé par le hashage. Il se contente uniquement de prendre chaque caractère de la string à un un, mais l'affiche en lui ajoutant son index.\
 Ainsi dans le dernière exemple :
-> 1 en position [0] => 1 + 0 = 1\
-> 1 en position [1] => 1 + 1 = 2\
-> 1 en position [2] => 1 + 2 = 3\
-> 1 en position [3] => 1 + 3 = 4\
-> 1 en position [4] => 1 + 4 = 5
+> `1` en position [0] => 1 + 0 = 1\
+> `1` en position [1] => 1 + 1 = 2\
+> `1` en position [2] => 1 + 2 = 3\
+> `1` en position [3] => 1 + 3 = 4\
+> `1` en position [4] => 1 + 4 = 5
 
 Nous allons donc pouvoir faire un programme qui va décoder notre `token`
 
@@ -85,9 +83,15 @@ int main(int ac, char **av) {
 Maintenant on peux le compiler puis exécuter notre binaire issue de `decode.c` avec le `token`
 
 ```
+:~$ scp -P 4242 level09@192.168.56.101:/home/user/level09/token .
+Password:25749xKZ8L7DkSCwJkT9dyv6f
+token
+
+:~$ chmod 777 token
+
 :~$ gcc decode.c
 
-:~$ .a.out token
+:~$ ./a.out `cat token`
 f3iji1ju5yuevaus41q1afiuq
 ```
 
