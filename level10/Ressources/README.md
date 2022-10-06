@@ -32,7 +32,6 @@ You don't have access to token
 
 :~$ ./level10 .profile localhost
 Connecting to localhost:6969 .. Unable to connect to host localhost
-
 ```
 
 L'usage nous indique que le binaire envoi un fichier, mais uniquement si on possède les droits sur ce dernier.
