@@ -48,8 +48,9 @@ access
 ...
 ```
 
-On remarque que le programme se connecte sur le port `:6969` et utilise `open` et `access`. Nous pouvons dés lors, profiter d'une faille d'access afin d'y récupérer le token (man access).\
-Pour ce faire nous allons utiliser 2 scripts :
+On remarque que le programme se connecte sur le port `:6969` et utilise `open` et `access`.\
+Nous pouvons dés lors, profiter d'une faille d'access afin d'y récupérer le token (On profite du temps qu'il prends entre le check des droits et l'ouverture du fichier. man access).\
+Pour ce faire nous allons utiliser 2 scripts qui utilise la technique du 'spam' :
 
 - 1er script - Qui va essayer d'envoyer le fichier /tmp/link sur le localhost (ici `192.168.56.101`)
 ```
@@ -76,6 +77,7 @@ Il ne nous reste plus qu'à écouter les transfert avec la commande netcat `nc -
 ```
 :~$ nc -lk 6969
 ...
+.*( )*.
 .*( )*.
 woupa2yuojeeaaed06riuj63c
 .*( )*.
