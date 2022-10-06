@@ -19,7 +19,7 @@ Password:f2av5il02puano7naaf6adaaf
 ...
 ```
 
-On trouve un fichier *`.pcap`* qui est un fichier de données associé à Wireshark. On télécharge donc le fichier pour l'ouvrir avec Wireshark
+On trouve un fichier *`.pcap`* qui est un fichier de données associé à Wireshark. On télécharge donc le fichier en local pour l'ouvrir avec Wireshark
 
 ```
 :~$ scp -P 4242 level02@192.168.56.101:/home/user/level02/level02.pcap .
