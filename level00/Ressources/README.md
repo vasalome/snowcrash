@@ -1,4 +1,4 @@
-# Level00
+# Level00: Chiffre Cesar
 
 ```
 ℹ️ Astuce - Se connecter à la VM en local
@@ -33,7 +33,7 @@ d--x--x--x  1 root    users    340 Aug 30  2015 ..
 Le Home est vide et ne contient aucun fichier inhabituel. L'user level00 ne possède pas beaucoup de droits sur la racine. On va chercher un ou des ficher(s) sur lequel l'user level00 ou flag00 aura des droits.
 
 ```
-:~$ find / -group flag00  2> /tmp/test
+:~$ find / -group flag00  2> /tmp/flag00 (ici 2> nous permet d'analyser toutes nos permissions en redirigeant toutes nos erreurs vers /tmp/flag00)
 /usr/sbin/john
 /rofs/usr/sbin/john
 ```

@@ -1,4 +1,4 @@
-# Level01
+# Level01: John The Ripper
 
 > login:password -> *`level01:x24ti5gi3x0ol2eh4esiuxias`*
 ```

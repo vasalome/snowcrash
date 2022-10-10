@@ -1,4 +1,4 @@
-# Level11
+# Level13: GDB pour les modifier tous !
 
 > login:password -> *`level13:g1qKMiRpXf53AWhDaU7FEkczr`*
 ```
@@ -26,7 +26,7 @@ Le Home de l'user level13 contient un binaire du même nom :
 UID 2013 started us but we we expect 4242
 ```
 
-On remqarque que l'usage attend un UID `4242`.
+On remarque que l'usage attend un UID `4242`.
 On vérifiant avec la commande `cat /etc/passwd`, on comprends que notre UID est `2013` et qu'aucun user ne possède l'UID 4242.
 
 En utilisant la commande `gdb -q`, puis `disas main` une fois gdb lancé, on va pouvoir l'analyser et modifier son fonctionnement et ses valeurs en cours d'exécution :

@@ -1,4 +1,4 @@
-# Level11
+# Level14: Exploit getflag
 
 > login:password -> *`level14:2A31L79asukciNyi8uppkEuSx`*
 ```
@@ -67,3 +67,28 @@ Check flag.Here is your token : 7QiHafiNa3HVozsaXkawuYrTstxbpABHD8CPnHJ
 
 Le dernier flag est donc :
 `7QiHafiNa3HVozsaXkawuYrTstxbpABHD8CPnHJ`
+
+
+### Bonus ++ :
+On peux également comprendre qu'à partir de cet exploit, il nous ai bien évidemment possible de récupérer les flags chaque level.\
+Par exemple :
+```
+(gdb) run
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /bin/getflag
+
+Breakpoint 1, 0x0804898e in main ()
+(gdb) set $eax=0
+(gdb) step
+Single stepping until exit from function main,
+which has no line number information.
+
+Breakpoint 2, 0x08048b02 in main ()
+(gdb) set $eax=3013
+(gdb) step
+Single stepping until exit from function main,
+which has no line number information.
+Check flag.Here is your token : 2A31L79asukciNyi8uppkEuSx
+0xb7e454d3 in __libc_start_main () from /lib/i386-linux-gnu/libc.so.6
+```

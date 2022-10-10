@@ -1,4 +1,4 @@
-# Level05
+# Level05: You have new mail.
 
 > login:password -> *`level05:ne2searoevaevoem4ov4ar8ap`*
 ```
